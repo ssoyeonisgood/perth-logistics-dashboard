@@ -1,0 +1,201 @@
+customer_id,segment,region
+CUST-00001,E-commerce,Fremantle
+CUST-00002,Retail,Perth CBD
+CUST-00003,E-commerce,Perth CBD
+CUST-00004,E-commerce,Armadale
+CUST-00005,Retail,Fremantle
+CUST-00006,Retail,Bunbury
+CUST-00007,E-commerce,Kewdale
+CUST-00008,Wholesale,North Perth
+CUST-00009,E-commerce,South Perth
+CUST-00010,E-commerce,Perth CBD
+CUST-00011,E-commerce,Joondalup
+CUST-00012,E-commerce,Perth CBD
+CUST-00013,Retail,Mandurah
+CUST-00014,E-commerce,Perth CBD
+CUST-00015,Wholesale,Midland
+CUST-00016,Retail,Perth CBD
+CUST-00017,Wholesale,North Perth
+CUST-00018,Wholesale,North Perth
+CUST-00019,Wholesale,Bunbury
+CUST-00020,Wholesale,Canning Vale
+CUST-00021,Retail,Kewdale
+CUST-00022,Retail,Joondalup
+CUST-00023,Wholesale,Perth CBD
+CUST-00024,Wholesale,Perth CBD
+CUST-00025,Retail,South Perth
+CUST-00026,Retail,North Perth
+CUST-00027,Retail,Joondalup
+CUST-00028,E-commerce,Bunbury
+CUST-00029,E-commerce,Armadale
+CUST-00030,E-commerce,Canning Vale
+CUST-00031,Wholesale,Kewdale
+CUST-00032,E-commerce,Fremantle
+CUST-00033,Wholesale,Kewdale
+CUST-00034,Wholesale,Midland
+CUST-00035,E-commerce,Mandurah
+CUST-00036,Wholesale,Midland
+CUST-00037,E-commerce,Perth CBD
+CUST-00038,E-commerce,Canning Vale
+CUST-00039,Retail,Mandurah
+CUST-00040,E-commerce,Joondalup
+CUST-00041,Retail,Fremantle
+CUST-00042,E-commerce,North Perth
+CUST-00043,E-commerce,Canning Vale
+CUST-00044,Retail,Canning Vale
+CUST-00045,Retail,Midland
+CUST-00046,E-commerce,Perth CBD
+CUST-00047,Wholesale,Rockingham
+CUST-00048,Retail,Bunbury
+CUST-00049,Wholesale,Midland
+CUST-00050,Wholesale,Canning Vale
+CUST-00051,Wholesale,South Perth
+CUST-00052,Retail,Fremantle
+CUST-00053,Wholesale,Bunbury
+CUST-00054,Retail,Midland
+CUST-00055,Wholesale,Fremantle
+CUST-00056,E-commerce,South Perth
+CUST-00057,E-commerce,Armadale
+CUST-00058,Retail,South Perth
+CUST-00059,E-commerce,South Perth
+CUST-00060,E-commerce,Fremantle
+CUST-00061,Wholesale,Kewdale
+CUST-00062,Retail,Fremantle
+CUST-00063,Wholesale,Rockingham
+CUST-00064,Wholesale,Perth CBD
+CUST-00065,Wholesale,Mandurah
+CUST-00066,Wholesale,Kewdale
+CUST-00067,Wholesale,North Perth
+CUST-00068,Wholesale,Mandurah
+CUST-00069,Wholesale,Perth CBD
+CUST-00070,Retail,Midland
+CUST-00071,E-commerce,Bunbury
+CUST-00072,Wholesale,Rockingham
+CUST-00073,Wholesale,Rockingham
+CUST-00074,Wholesale,North Perth
+CUST-00075,Wholesale,Kewdale
+CUST-00076,Wholesale,Armadale
+CUST-00077,Wholesale,South Perth
+CUST-00078,E-commerce,Kewdale
+CUST-00079,E-commerce,Bunbury
+CUST-00080,Wholesale,Armadale
+CUST-00081,E-commerce,Rockingham
+CUST-00082,Retail,Fremantle
+CUST-00083,Wholesale,Bunbury
+CUST-00084,Retail,Perth CBD
+CUST-00085,Retail,North Perth
+CUST-00086,Wholesale,Perth CBD
+CUST-00087,E-commerce,Bunbury
+CUST-00088,Retail,Joondalup
+CUST-00089,Wholesale,Joondalup
+CUST-00090,Retail,Midland
+CUST-00091,Retail,Kewdale
+CUST-00092,Retail,Rockingham
+CUST-00093,Retail,Rockingham
+CUST-00094,E-commerce,South Perth
+CUST-00095,Retail,South Perth
+CUST-00096,Retail,South Perth
+CUST-00097,Retail,Fremantle
+CUST-00098,E-commerce,Mandurah
+CUST-00099,Retail,Canning Vale
+CUST-00100,Retail,Mandurah
+CUST-00101,E-commerce,Perth CBD
+CUST-00102,E-commerce,Mandurah
+CUST-00103,E-commerce,Fremantle
+CUST-00104,Retail,Midland
+CUST-00105,E-commerce,Perth CBD
+CUST-00106,E-commerce,Mandurah
+CUST-00107,Retail,Fremantle
+CUST-00108,E-commerce,Canning Vale
+CUST-00109,Retail,Mandurah
+CUST-00110,Wholesale,Fremantle
+CUST-00111,E-commerce,South Perth
+CUST-00112,Wholesale,Rockingham
+CUST-00113,Retail,South Perth
+CUST-00114,E-commerce,Rockingham
+CUST-00115,Retail,North Perth
+CUST-00116,Wholesale,North Perth
+CUST-00117,Retail,North Perth
+CUST-00118,E-commerce,Canning Vale
+CUST-00119,E-commerce,South Perth
+CUST-00120,Wholesale,Rockingham
+CUST-00121,Retail,Fremantle
+CUST-00122,E-commerce,Perth CBD
+CUST-00123,Wholesale,Fremantle
+CUST-00124,E-commerce,Perth CBD
+CUST-00125,E-commerce,Joondalup
+CUST-00126,Retail,Fremantle
+CUST-00127,E-commerce,Mandurah
+CUST-00128,Retail,Mandurah
+CUST-00129,E-commerce,Kewdale
+CUST-00130,Wholesale,South Perth
+CUST-00131,E-commerce,Perth CBD
+CUST-00132,Retail,Perth CBD
+CUST-00133,Retail,Bunbury
+CUST-00134,Wholesale,Midland
+CUST-00135,E-commerce,South Perth
+CUST-00136,E-commerce,Canning Vale
+CUST-00137,Wholesale,Kewdale
+CUST-00138,E-commerce,Canning Vale
+CUST-00139,E-commerce,Canning Vale
+CUST-00140,Retail,Canning Vale
+CUST-00141,E-commerce,South Perth
+CUST-00142,E-commerce,Canning Vale
+CUST-00143,Wholesale,Mandurah
+CUST-00144,Wholesale,Midland
+CUST-00145,Retail,Midland
+CUST-00146,E-commerce,North Perth
+CUST-00147,E-commerce,Joondalup
+CUST-00148,E-commerce,Perth CBD
+CUST-00149,Retail,Bunbury
+CUST-00150,Retail,Perth CBD
+CUST-00151,Wholesale,Joondalup
+CUST-00152,Retail,Bunbury
+CUST-00153,E-commerce,South Perth
+CUST-00154,E-commerce,Fremantle
+CUST-00155,Retail,South Perth
+CUST-00156,E-commerce,Perth CBD
+CUST-00157,E-commerce,Perth CBD
+CUST-00158,Retail,Bunbury
+CUST-00159,Retail,Bunbury
+CUST-00160,E-commerce,Joondalup
+CUST-00161,E-commerce,Canning Vale
+CUST-00162,E-commerce,South Perth
+CUST-00163,Wholesale,Bunbury
+CUST-00164,Wholesale,Rockingham
+CUST-00165,Wholesale,Joondalup
+CUST-00166,Retail,Mandurah
+CUST-00167,Wholesale,Perth CBD
+CUST-00168,Retail,Joondalup
+CUST-00169,Retail,South Perth
+CUST-00170,Wholesale,Bunbury
+CUST-00171,Wholesale,Perth CBD
+CUST-00172,Wholesale,Fremantle
+CUST-00173,E-commerce,Joondalup
+CUST-00174,Wholesale,Kewdale
+CUST-00175,E-commerce,Perth CBD
+CUST-00176,Retail,South Perth
+CUST-00177,E-commerce,North Perth
+CUST-00178,Wholesale,Rockingham
+CUST-00179,Retail,Armadale
+CUST-00180,Retail,Canning Vale
+CUST-00181,Retail,Armadale
+CUST-00182,E-commerce,South Perth
+CUST-00183,Wholesale,Mandurah
+CUST-00184,Retail,Mandurah
+CUST-00185,Retail,North Perth
+CUST-00186,Retail,Canning Vale
+CUST-00187,E-commerce,Kewdale
+CUST-00188,E-commerce,North Perth
+CUST-00189,Wholesale,Midland
+CUST-00190,E-commerce,Armadale
+CUST-00191,Retail,North Perth
+CUST-00192,Wholesale,Armadale
+CUST-00193,Retail,Perth CBD
+CUST-00194,Retail,Mandurah
+CUST-00195,E-commerce,Perth CBD
+CUST-00196,Wholesale,Rockingham
+CUST-00197,E-commerce,Midland
+CUST-00198,E-commerce,Canning Vale
+CUST-00199,Wholesale,Kewdale
+CUST-00200,Retail,Armadale

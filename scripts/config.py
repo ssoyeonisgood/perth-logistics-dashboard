@@ -1,7 +1,9 @@
 """Project paths and shared settings."""
 
+import os
 from pathlib import Path
 
+from dotenv import load_dotenv
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
@@ -19,3 +21,9 @@ CUSTOMERS_RAW = RAW_DIR / "customers_raw.csv"
 WAREHOUSE_MASTER = RAW_DIR / "warehouse_master.csv"
 
 QA_REPORT_PATH = REPORTS_DIR / "qa_report.json"
+
+load_dotenv(PROJECT_ROOT / ".env")
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:postgres@localhost:5432/perth_ops",
+)

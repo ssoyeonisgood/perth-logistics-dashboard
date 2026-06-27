@@ -1,0 +1,116 @@
+{
+  "summary": {
+    "all_critical_passed": true,
+    "rules_passed": 12,
+    "rules_total": 12,
+    "before_after_stats": {
+      "raw_row_count": 5850,
+      "cleansed_row_count": 5373,
+      "quarantine_row_count": 477,
+      "duplicate_shipment_id_before": 50,
+      "duplicate_shipment_id_after": 0,
+      "null_warehouse_before": 294,
+      "null_warehouse_after": 0,
+      "invalid_date_before": 101,
+      "invalid_date_after": 0
+    }
+  },
+  "rules": [
+    {
+      "rule_id": "01",
+      "name": "duplicate_shipment_id",
+      "before": 50,
+      "after": 0,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "rule_id": "02",
+      "name": "null_warehouse_id",
+      "before": 294,
+      "after": 0,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "rule_id": "03",
+      "name": "invalid_warehouse_id",
+      "before": 0,
+      "after": 0,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "rule_id": "04",
+      "name": "invalid_date",
+      "before": 101,
+      "after": 0,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "rule_id": "05",
+      "name": "orphan_customer_id",
+      "before": 0,
+      "after": 0,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "rule_id": "06",
+      "name": "is_delayed_consistency",
+      "before": 0,
+      "after": 0,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "rule_id": "07",
+      "name": "negative_delay_hours",
+      "before": 0,
+      "after": 0,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "rule_id": "08",
+      "name": "future_delivery_dates",
+      "before": 0,
+      "after": 0,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "rule_id": "09",
+      "name": "row_count_reconciliation",
+      "before": 5850,
+      "after": 5850,
+      "passed": true,
+      "detail": "cleansed=5373, quarantine=477"
+    },
+    {
+      "rule_id": "10",
+      "name": "referential_integrity",
+      "before": 0,
+      "after": 0,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "rule_id": "11",
+      "name": "kpi_sanity_on_time_pct",
+      "before": 0,
+      "after": 91.35,
+      "passed": true,
+      "detail": "91.3%"
+    },
+    {
+      "rule_id": "12",
+      "name": "quarantine_review",
+      "before": 0,
+      "after": 477,
+      "passed": true,
+      "detail": "quarantine rows documented for review"
+    }
+  ]
+}

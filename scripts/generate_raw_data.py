@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from config import (  # noqa: E402
+from config import ( 
     CUSTOMERS_RAW,
     INVENTORY_RAW,
     RANDOM_SEED,

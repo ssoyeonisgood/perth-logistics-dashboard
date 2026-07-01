@@ -8,9 +8,9 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from config import DATABASE_URL, SQL_DIR  # noqa: E402
-from cleanse import run_cleanse  # noqa: E402
-from validate import validate_and_save  # noqa: E402
+from config import DATABASE_URL, SQL_DIR  
+from cleanse import run_cleanse 
+from validate import validate_and_save 
 
 
 def _run_setup_sql(engine) -> None:

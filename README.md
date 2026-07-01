@@ -1,46 +1,91 @@
-# Perth Logistics Dashboard — 학습용 포트폴리오
+# Perth Logistics Operations Dashboard
 
-Perth 물류 회사 시나리오로 **Python → PostgreSQL → Power BI** 파이프라인을 단계별로 만듭니다.
+End-to-end analytics portfolio: **Python ETL → PostgreSQL mart → Power BI**.
 
-## 진행 체크리스트
+Synthetic shipment data for a three-warehouse logistics network. Raw extracts include duplicate IDs, null warehouse codes, and invalid dates. A Python cleansing and QA pipeline builds a trusted mart layer before reporting.
 
-- [x] **Step 1** — 프로젝트 폴더·설정 파일 만들기 (지금 여기)
-- [ ] **Step 2** — Raw 더미 데이터 생성 (`generate_raw_data.py`)
-- [ ] **Step 3** — 데이터 정제 (`cleanse.py`)
-- [ ] **Step 4** — QA 검증 12 rules (`validate.py`)
-- [ ] **Step 5** — Cleansed CSV export (`export_cleansed.py`)
-- [ ] **Step 6** — PostgreSQL 적재 (`load_to_postgres.py`)
-- [ ] **Step 7** — 분석 brief (`analyze.py`)
-- [ ] **Step 8** — Power BI 대시보드
-- [ ] **Step 9** — README·GitHub 공개
+## Dashboard preview
 
-> 한 번에 하나씩만 진행합니다. Step 2는 준비되면 요청하세요.
+| Executive Summary | Operations Detail | Data Quality |
+|:---:|:---:|:---:|
+| ![Executive Summary](powerbi/screenshots/01_executive.png) | ![Operations Detail](powerbi/screenshots/02_operations.png) | ![Data Quality Monitor](powerbi/screenshots/03_data_quality.png) |
 
-## Step 1 — 지금 할 일
+Open the report in Power BI Desktop: [`powerbi/perth-logistics-dashboard.pbix`](powerbi/perth-logistics-dashboard.pbix)
 
-### 1) 폴더 확인
+## Data quality — before vs after
 
-```bash
-cd ~/perth-logistics-dashboard
-ls -R
+| Issue | Before (raw) | After (cleansed mart) |
+|-------|-------------:|----------------------:|
+| Duplicate shipment IDs | 50 | 0 |
+| Null warehouse IDs | 294 | 0 |
+| Invalid dates | 101 | 0 |
+| **QA rules passed** | — | **12 / 12** |
+
+- **5,373** shipments loaded to the mart
+- **477** rows quarantined and excluded from BI
+
+Full rule results: [`data/reports/qa_report.json`](data/reports/qa_report.json)
+
+## Key findings (cleansed data)
+
+- Network on-time delivery: **91.3%**
+- Nov–Dec peak lift: **~172%** above non-peak months
+- Q4 volume rises across all three warehouses; delay patterns differ by site
+
+## Pipeline
+
+```
+generate_raw_data.py → cleanse.py → validate.py → export_cleansed.py
+                              ↓
+                    load_to_postgres.py → mart schema
+                              ↓
+                    Power BI (Import from PostgreSQL)
 ```
 
-`data/raw/`, `scripts/`, `docs/` 등이 보이면 OK.
+| Script | Purpose |
+|--------|---------|
+| `generate_raw_data.py` | Create synthetic raw CSV files |
+| `cleanse.py` | Standardize fields; route bad rows to quarantine |
+| `validate.py` | Run 12 QA rules; write `qa_report.json` |
+| `export_cleansed.py` | Export cleansed CSVs |
+| `load_to_postgres.py` | Load star-schema mart tables |
+| `analyze.py` | Print summary metrics to the console |
 
-### 2) Python 패키지 설치
+## Reproduce locally
+
+**Requirements:** Python 3.10+, PostgreSQL, Power BI Desktop (Windows)
 
 ```bash
-python3 -m pip install --user -r requirements.txt
+git clone https://github.com/ssoyeonisgood/perth-logistics-dashboard.git
+cd perth-logistics-dashboard
+python3 -m pip install -r requirements.txt
+
+cp .env.example .env  
+createdb perth_ops
+psql -d perth_ops -f sql/00_setup.sql
+
+python3 scripts/generate_raw_data.py
+python3 scripts/cleanse.py
+python3 scripts/validate.py
+python3 scripts/export_cleansed.py
+python3 scripts/load_to_postgres.py
+python3 scripts/analyze.py
 ```
 
-에러 없이 끝나면 OK.
+**Power BI:** Connect to PostgreSQL (`localhost`, database `perth_ops`, schema `mart`, Import mode). Open the existing `.pbix` or rebuild from the mart tables.
 
-### 3) 완료 확인
+## Project structure
 
-```bash
-python3 -c "import pandas; print('pandas OK', pandas.__version__)"
+```
+scripts/              Python ETL and QA
+sql/                  PostgreSQL mart DDL
+data/raw/             Synthetic source files
+data/cleansed/        Cleansed CSV outputs
+data/reports/         qa_report.json
+powerbi/              .pbix report and page screenshots
 ```
 
----
+## Notes
 
-**Step 1이 끝나면** 채팅에 `Step 1 완료` 또는 `Step 2 가자`라고 보내주세요.
+- Synthetic data (`random_seed=42`) for portfolio demonstration only.
+- `.env` is gitignored — use [`.env.example`](.env.example) as a template.

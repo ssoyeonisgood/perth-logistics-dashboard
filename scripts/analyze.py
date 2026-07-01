@@ -1,16 +1,11 @@
-"""Generate analysis brief from cleansed shipment data."""
+"""Compute summary metrics from cleansed shipment data."""
 from __future__ import annotations
 
 import sys
 from pathlib import Path
 
-import pandas as pd
-
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from config import DOCS_DIR  # noqa: E402
-from cleanse import run_cleanse  # noqa: E402
-
-BRIEF_PATH = DOCS_DIR / "analysis_brief.md"
+from cleanse import run_cleanse  
 
 
 def run_analysis(cleanse_result: dict | None = None) -> dict:
@@ -53,64 +48,8 @@ def run_analysis(cleanse_result: dict | None = None) -> dict:
     }
 
 
-def write_brief(metrics: dict, path: Path | None = None) -> Path:
-    path = path or BRIEF_PATH
-    DOCS_DIR.mkdir(parents=True, exist_ok=True)
-
-    content = f"""# Analysis Brief — Perth Logistics Co.
-
-> Auto-generated statistics from `scripts/analyze.py`. Narrative and recommendations should be reviewed before use in applications.
-
-## Context
-
-Perth Logistics Co. operates three warehouses (Perth, Fremantle, Kewdale). Shipment data from multiple source systems showed inconsistent warehouse codes, duplicate records, and conflicting KPI definitions. This analysis uses the **cleansed** dataset ({metrics["total_shipments"]:,} shipments) after Python QA validation.
-
-## Key Findings
-
-### 1. Peak-season demand spike
-
-- Average monthly shipments in **Nov–Dec**: ~{metrics["peak_monthly_avg"]:.0f}
-- Average monthly shipments in other months: ~{metrics["non_peak_monthly_avg"]:.0f}
-- **Peak lift: ~{metrics["peak_lift_pct"]}%** above non-peak months
-
-Peak-period volume creates capacity pressure across the network, especially at the highest-volume site.
-
-### 2. Warehouse concentration and on-time performance
-
-- **{metrics["top_warehouse"]}** handles **{metrics["top_warehouse_share_pct"]}%** of all shipments
-- On-time delivery at {metrics["top_warehouse"]}: **{metrics["top_warehouse_on_time_pct"]}%**
-- Highest delay rate: **{metrics["highest_delay_warehouse"]}** ({metrics["highest_delay_pct"]}% delayed)
-
-Concentration at Perth WH suggests bottleneck risk during peak season.
-
-### 3. Network on-time performance
-
-- Overall on-time delivery (cleansed data): **{metrics["on_time_pct"]}%**
-- Delay patterns vary materially by warehouse — targeted intervention is warranted rather than network-wide blanket changes.
-
-## Evidence-Based Recommendations
-
-1. **Workforce planning:** Increase Perth WH staffing by ~15% for weeks 45–52 based on peak lift of {metrics["peak_lift_pct"]}%.
-2. **Inventory readiness:** Review safety stock for top SKUs at {metrics["highest_delay_warehouse"]} where delay rates are highest.
-3. **Customer communication:** Tighten order cutoff times for high-volume segments before peak season to reduce last-mile pressure.
-
-## Limitations
-
-- Synthetic data generated for portfolio demonstration (`random_seed=42`).
-- Forecasting uses simple historical averages; production planning would require time-series models.
-- External factors (weather, port delays) not modelled.
-
-## Data Quality Note
-
-All metrics above are computed on data that passed **12 automated QA rules**. See `data/reports/qa_report.json` for before/after validation results.
-"""
-    path.write_text(content, encoding="utf-8")
-    return path
-
-
 if __name__ == "__main__":
     metrics = run_analysis()
-    out = write_brief(metrics)
-    print(f"Wrote {out}")
+    print(f"  Total shipments: {metrics['total_shipments']}")
     print(f"  On-time %: {metrics['on_time_pct']}")
     print(f"  Peak lift: {metrics['peak_lift_pct']}%")

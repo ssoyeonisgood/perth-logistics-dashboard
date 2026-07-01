@@ -5,8 +5,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from config import CLEANSED_DIR  # noqa: E402
-from cleanse import run_cleanse  # noqa: E402
+from config import CLEANSED_DIR  
+from cleanse import run_cleanse  
 
 SAMPLE_ROWS = 1000
 

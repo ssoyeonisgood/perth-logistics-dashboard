@@ -9,8 +9,8 @@ from typing import Any
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from config import QA_REPORT_PATH, REPORTS_DIR  # noqa: E402
-from cleanse import run_cleanse  # noqa: E402
+from config import QA_REPORT_PATH, REPORTS_DIR  
+from cleanse import run_cleanse  
 
 
 def _rule(

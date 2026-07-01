@@ -10,7 +10,6 @@ DATA_DIR = PROJECT_ROOT / "data"
 RAW_DIR = DATA_DIR / "raw"
 CLEANSED_DIR = DATA_DIR / "cleansed"
 REPORTS_DIR = DATA_DIR / "reports"
-DOCS_DIR = PROJECT_ROOT / "docs"
 SQL_DIR = PROJECT_ROOT / "sql"
 
 RANDOM_SEED = 42
